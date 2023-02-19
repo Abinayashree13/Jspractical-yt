@@ -1,0 +1,71 @@
+// forEach to console.log each name in the names array.
+const names = ['John', 'Jane', 'Jack', 'Jill'];
+names.forEach(name => console.log(name));
+
+// map to create a new array by changing each number to square in the numbers array
+const numbers = [2, 4, 6, 8];
+const squares = numbers.map(num => num * num);
+console.log(squares); // [4, 16, 36, 64]
+
+// filter to filter out country start with 'E';
+const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
+const filteredCountries = countries.filter(country => !country.startsWith('E'));
+console.log(filteredCountries); // ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+
+// Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.
+function getStringLists(arr) {
+return arr.filter(item => typeof item === 'string');
+}
+console.log(getStringLists(['hello', 123, 'world', true])); // ['hello', 'world']
+
+// Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+const sentence = countries.reduce((acc, country, index) => {
+if (index === 0) {
+return country;
+} else if (index === countries.length - 1) {
+return ${acc}, and ${country} are north European countries;
+} else {
+return ${acc}, ${country};
+}
+}, '');
+console.log(sentence); // Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+
+// Find out which letter is used many times as initial for a country name from the countries array
+const countries = ['Finland', 'Fiji', 'France', 'Sweden', 'Switzerland', 'Spain'];
+const initials = countries.map(country => country[0]);
+const frequency = {};
+initials.forEach(initial => frequency[initial] = (frequency[initial] || 0) + 1);
+const maxFrequency = Math.max(...Object.values(frequency));
+const mostCommonInitial = Object.keys(frequency).find(initial => frequency[initial] === maxFrequency);
+console.log(mostCommonInitial); // F
+
+// Assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.-using destruction
+const constants = [2.718, 3.14, 9.81, 37, 100];
+const [e, pi, gravity, humanBodyTemp, waterBoilingTemp] = constants;
+
+// Exercises: Set and Map
+// Level 1
+const a = new Set([4, 5, 8, 9]);
+const b = new Set([3, 4, 5, 7]);
+const countries = ['Finland', 'Sweden', 'Norway'];
+const emptySet = new Set();
+for (let i = 0; i <= 10; i++) {
+emptySet.add(i);
+}
+emptySet.delete(5);
+emptySet.clear();
+const stringArray = ['apple', 'banana', 'orange', 'grape', 'lemon'];
+const countryCharCount = new Map();
+countries.forEach(country => countryCharCount.set(country, country.length));
+console.log(countryCharCount);
+
+// Exercises: Set and Map
+// Level 2
+const union = new Set([...a, ...b]);
+console.log(union);
+const intersection = new Set([...a].filter(num => b.has(num)));
+console.log(intersection);
+const aMinusB = new Set([...a].
+
+
+
